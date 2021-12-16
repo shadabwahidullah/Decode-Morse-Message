@@ -38,7 +38,7 @@ morse_code = {
   '0' => '-----'
 }
 
-morse_decode = {
+@morse_decode = {
   '.-' => 'a',
   '-...' => 'b',
   '-.-.' => 'c',
@@ -81,9 +81,11 @@ morse_decode = {
 }
 
 def decode_char(code)
-  puts #morse_decode[code]
+  return @morse_decode[code].upcase
 end
 
 def decode_word(word)
-
+    decoded_word = '';
+    word.split.each{|c| decode_word = decode_word + decode_char(c)}
+    return word
 end
