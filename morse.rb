@@ -85,7 +85,16 @@ def decode_char(code)
 end
 
 def decode_word(word)
-    decoded_word = '';
-    word.split.each{|c| decode_word = decode_word + decode_char(c)}
-    return word
+    decoded_word = ''
+    word.split.each{|c| decoded_word.concat(decode_char(c))}
+    return decoded_word
 end
+
+def decode_sentence(sentence)
+    decoded_sentence = ''
+    sentence.split("   ").each{|s| decoded_sentence.concat(' ').concat(decode_word(s))}
+    return decoded_sentence
+end
+
+puts decode_word("\n-- -.--   -. .- -- .")
+puts decode_sentence(".-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-. / .-. ..- -... .. . ...")
