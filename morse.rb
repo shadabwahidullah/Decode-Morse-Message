@@ -1,4 +1,4 @@
-morse_code = {
+@morse_code = {
   'a' => '.-',
   'b' => '-...',
   'c' => '-.-.',
@@ -81,20 +81,20 @@ morse_code = {
 }
 
 def decode_char(code)
-  return @morse_decode[code].upcase
+   @morse_decode[code]
 end
 
 def decode_word(word)
-    decoded_word = ''
-    word.split.each{|c| decoded_word.concat(decode_char(c))}
-    return decoded_word
+  decoded_word = ''
+  word.split.each { |c| decoded_word.concat(decode_char(c)) }
+   decoded_word.upcase
 end
 
 def decode_sentence(sentence)
-    decoded_sentence = ''
-    sentence.split("   ").each{|s| decoded_sentence.concat(' ').concat(decode_word(s))}
-    return decoded_sentence
+  decoded_sentence = ''
+  sentence.split('   ').each { |s| decoded_sentence.concat(' ').concat(decode_word(s)) }
+   decoded_sentence
 end
 
-puts decode_word("\n-- -.--   -. .- -- .")
-puts decode_sentence(".-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-. / .-. ..- -... .. . ...")
+puts decode_word('-- -.--   -. .- -- .')
+puts decode_sentence('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-. / .-. ..- -... .. . ...')
