@@ -81,19 +81,19 @@
 }
 
 def decode_char(code)
-   @morse_decode[code]
+  @morse_decode[code]
 end
 
 def decode_word(word)
   decoded_word = ''
   word.split.each { |c| decoded_word.concat(decode_char(c)) }
-   decoded_word.upcase
+  decoded_word.upcase
 end
 
 def decode_sentence(sentence)
   decoded_sentence = ''
   sentence.split('   ').each { |s| decoded_sentence.concat(' ').concat(decode_word(s)) }
-   decoded_sentence
+  decoded_sentence
 end
 
 puts decode_word('-- -.--   -. .- -- .')
