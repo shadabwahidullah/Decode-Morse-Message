@@ -8,7 +8,7 @@ During your vacation at the seaside, time after time you find old bottles with p
 In your terminal, enter a git clone and past the link that you copied from the repository, and press the   Enter
 (e.g. git clone https://github.com/shadabwahidullah/Decode-Morse-Message.git).
 
-* To get a local copy up and running follow these steps.
+- To get a local copy up and running follow these steps.
 
 2 - open your terminal and clone the project running 
 
